@@ -13,15 +13,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Setup Flutter correctly
+      # Install Flutter 3.29.2 explicitly
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: "3.19.0" # Replace with the latest stable version
-          cache: false
-
-      - name: Enable Flutter
-        run: echo "$HOME/.flutter/bin" >> $GITHUB_PATH
+          flutter-version: "3.29.2"
 
       - name: Check Flutter version (optional)
         run: flutter --version

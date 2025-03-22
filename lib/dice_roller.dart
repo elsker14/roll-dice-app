@@ -16,7 +16,11 @@ class _DiceRollerState extends State<DiceRoller> {
     var activeDiceImage = 'assets/images/dice-3.png';   // bc of this, class cannot be const anymore
 
     void rollDice() {
-        activeDiceImage = 'assets/images/dice-4.png';
+        // anonymous function
+        setState(() {
+                activeDiceImage = 'assets/images/dice-4.png';
+            }
+        );
     }
 
     @override

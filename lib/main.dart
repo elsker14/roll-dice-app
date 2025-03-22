@@ -5,11 +5,17 @@ import 'gradient_container.dart';
 // similar to 'public static void main()' in Java
 // defining a function by its signature & body
 void main() {
+    const List<Color> backgroundColours = [
+        Color.fromARGB(255, 26, 2, 80),
+        Color.fromARGB(255, 10, 98, 7),
+        Color.fromARGB(255, 98, 7, 86)
+    ];
+
     // executing/invoking/calling a function
     runApp(
         const MaterialApp(
             home: Scaffold(
-                body: GradientContainer()
+                body: GradientContainer(backgroundColours)
             )
         )
     );

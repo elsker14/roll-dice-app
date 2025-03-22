@@ -13,17 +13,20 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Setup Flutter instead of Dart
-      - uses: subosito/flutter-action@v2
+      # Setup Flutter correctly
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
         with:
-          flutter-version: "stable" # You can specify a specific version if needed
+          flutter-version: "stable"
+
+      - name: Enable Flutter
+        run: echo "$HOME/.flutter/bin" >> $GITHUB_PATH
+
+      - name: Check Flutter version (optional)
+        run: flutter --version
 
       - name: Install dependencies
         run: flutter pub get
-
-      # Uncomment this step to verify formatting
-      # - name: Verify formatting
-      #   run: flutter format --output=none --set-exit-if-changed .
 
       - name: Analyze project source
         run: flutter analyze

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:roll_dice_app/dice_roller.dart';
 
 /* other types: var, dynamic (unrecommended), const, final
 when you dont want to assign a value, but want to have a type
@@ -13,6 +14,11 @@ Stored directly in memory, making it more performant than final. */
 const startAlignment = Alignment.topLeft;
 const endAlignment = Alignment.bottomRight;
 
+/*
+    StatefulWidget - affects states of app, data may change
+    StatelessWidget - is the opposite
+ */
+
 class GradientContainer extends StatelessWidget {
     final List<Color> backgroundColours;
 
@@ -23,10 +29,6 @@ class GradientContainer extends StatelessWidget {
     inside the constructor {super.key, required this.backgroundColours} */
     // additional constructor defined as .bc
     const GradientContainer.bc({super.key, required this.backgroundColours});
-
-    void rollDice() {
-
-    }
 
     @override
     Widget build(BuildContext context) {
@@ -39,33 +41,7 @@ class GradientContainer extends StatelessWidget {
                 )
             ),
             child: Center(
-                child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                        Image.asset(
-                            'assets/images/dice-3.png',
-                            width: 200
-                        ),
-                        const SizedBox(
-                            height: 20,
-                        ),
-                        TextButton(
-                            /* anonymous function (no name) that can only be used and called here
-                            onPressed: () {},*/
-                            onPressed: rollDice,
-                            style: TextButton.styleFrom(
-                                /* OR USE THE SizedBox widget as above (line 49)
-                                padding: const EdgeInsets.only(
-                                    top: 20
-                                ),*/
-                                foregroundColor: Colors.white,
-                                textStyle: const TextStyle(
-                                    fontSize: 28
-                                )
-                            ),
-                            child: const Text('Roll Dice')
-                        )
-                    ])
+                child: DiceRoller()
             )
         );
     }

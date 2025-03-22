@@ -13,7 +13,7 @@ void main() {
 
     // executing/invoking/calling a function
     runApp(
-        const MaterialApp(
+        MaterialApp(
             home: Scaffold(
                 // body: GradientContainer(backgroundColours) - works only for positional args
                 body: GradientContainer.bc(backgroundColours: backgroundColours)

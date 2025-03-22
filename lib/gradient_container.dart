@@ -17,7 +17,12 @@ const endAlignment = Alignment.bottomRight;
 class GradientContainer extends StatelessWidget {
     final List<Color> backgroundColours;
 
-    const GradientContainer(this.backgroundColours, {super.key});
+    /* this approach uses positional argument
+    const GradientContainer(this.backgroundColours, {super.key}); */
+
+    /* if wanted to use named argument, use 'required' keyword in front of var
+    inside the constructor {super.key, required this.backgroundColours} */
+    const GradientContainer({required this.backgroundColours, super.key});
 
     @override
     Widget build(BuildContext context) {

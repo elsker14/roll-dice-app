@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:roll_dice_app/styled_text.dart';
 
 /* other types: var, dynamic (unrecommended), const, final
 when you dont want to assign a value, but want to have a type
@@ -22,7 +21,8 @@ class GradientContainer extends StatelessWidget {
 
     /* if wanted to use named argument, use 'required' keyword in front of var
     inside the constructor {super.key, required this.backgroundColours} */
-    const GradientContainer({required this.backgroundColours, super.key});
+    // additional constructor defined as .bc
+    const GradientContainer.bc({super.key, required this.backgroundColours});
 
     @override
     Widget build(BuildContext context) {
@@ -34,8 +34,8 @@ class GradientContainer extends StatelessWidget {
                     end: endAlignment
                 )
             ),
-            child: const Center(
-                child: StyledText('Evoluto 2.0!')
+            child: Center(
+                child: Image.asset('assets/images/dice-3.png', width: 200)
             )
         );
     }

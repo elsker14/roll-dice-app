@@ -16,7 +16,7 @@ void main() {
         const MaterialApp(
             home: Scaffold(
                 // body: GradientContainer(backgroundColours) - works only for positional args
-                body: GradientContainer(backgroundColours: backgroundColours)
+                body: GradientContainer.bc(backgroundColours: backgroundColours)
             )
         )
     );
